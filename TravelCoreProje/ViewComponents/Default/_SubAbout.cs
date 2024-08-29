@@ -1,5 +1,4 @@
-﻿
-using BusinessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntitiyFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace TravelCoreProje.ViewComponents.Default
 {
-    public class _Feature : ViewComponent
+    public class _SubAbout : ViewComponent
     {
-        FeatureManager FeatureManager = new FeatureManager(new EfFeatureDal());
+        SubAboutManager subAboutManager = new SubAboutManager(new EfSubAboutDal());
         public IViewComponentResult Invoke()
         {
-
-            //var values = FeatureManager.TGetlist();
-            //ViewBag.image1= FeatureManager.get
-            return View();
+            var values = subAboutManager.TGetlist();
+            return View(values);
         }
     }
 }
