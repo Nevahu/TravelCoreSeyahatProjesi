@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public List<Testimonial> TGetlist()
         {
-            throw new NotImplementedException();
+            return _testimonialDal.GetList();
         }
 
         public void TUpdate(Testimonial t)
