@@ -1,12 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using BusinessLayer.Concrete;
+using DataAccessLayer.EntitiyFramework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TravelCoreProje.Controllers
 {
     public class DestinationController : Controller
     {
+        DestinationManager destinationManager = new DestinationManager(new EfDestinationDal()); 
         public IActionResult Index()
         {
-            return View();
+            var values = destinationManager.TGetlist();
+            return View(values);
         }
     }
 }
