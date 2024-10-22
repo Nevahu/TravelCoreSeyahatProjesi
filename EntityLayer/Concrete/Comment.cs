@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
@@ -11,9 +12,11 @@ namespace EntityLayer.Concrete
         [Key]
 
         public int CommentID { get; set; }
-        public string CommetUser { get; set; }
-        public DateTime CommetDate { get; set; }
-        public string CommetContent { get; set; }
-        public bool CommetState { get; set; }
+        public string CommentUser { get; set; }
+        public DateTime CommentDate { get; set; }
+        public string CommentContent { get; set; }
+        public bool CommentState { get; set; }
+        public int DestinationID { get; set; }
+        public Destination Destination { get; set; }
     }
 }
